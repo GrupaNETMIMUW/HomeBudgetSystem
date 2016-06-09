@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\Command.cs" />
+    <Compile Include="ViewModels\DailyExpensesViewModel.cs" />
+    <Compile Include="Views\DailyExpensesView.xaml.cs">
+      <DependentUpon>DailyExpensesView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +72,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\DailyExpensesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -95,14 +104,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\HomeBudgetSystem.Data\HomeBudgetSystem.Data.csproj">
       <Project>{9c7cc670-3c79-4684-993d-f2c8beeb4c3d}</Project>
       <Name>HomeBudgetSystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeBudgetSystem.ExampleStorage\HomeBudgetSystem.ExampleStorage.csproj">
+      <Project>{869ee976-abca-49fd-8b27-43374e325f0a}</Project>
+      <Name>HomeBudgetSystem.ExampleStorage</Name>
     </ProjectReference>
     <ProjectReference Include="..\HomeBudgetSystem.StorageAPI\HomeBudgetSystem.StorageAPI.csproj">
       <Project>{26da4265-fb6a-4524-95e6-3b6e09ec47ff}</Project>

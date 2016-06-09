@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="HomeBudgetSystem.Views.DailyExpensesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HomeBudgetSystem.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" MinWidth="90"
+                    HorizontalAlignment="Center">
+            <Button Content="&lt;-" Width="20" Margin="0, 15, 0, 15"
+                    Command="{Binding Path=PreviousDay}"/>
+            <TextBox Text="{Binding Path=DateText, Mode=OneWay}" 
+                     TextAlignment="Center"
+                     MinWidth="50"
+                     Margin="0, 15, 0, 15" />
+            <Button Content="-&gt;" Width="20" Margin="0, 15, 0, 15"
+                    Command="{Binding Path=NextDay}"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Path=Expenses, Mode=OneWay}">
+        </DataGrid>
+    </Grid>
+</UserControl>

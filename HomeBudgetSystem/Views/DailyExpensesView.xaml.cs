@@ -1,7 +1,4 @@
-﻿using HomeBudgetSystem.ExampleStorage;
-using HomeBudgetSystem.ViewModels;
-using HomeBudgetSystem.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HomeBudgetSystem
+namespace HomeBudgetSystem.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DailyExspensesView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DailyExpensesView : UserControl
     {
-        public MainWindow()
+        public DailyExpensesView()
         {
             InitializeComponent();
-            var view = new DailyExpensesView();
-            view.DataContext = new DailyExpensesViewModel(new DaysRepository());
-            mainFrame.Content = view;
         }
     }
 }
